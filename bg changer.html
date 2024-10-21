@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg Switcher</title>
+    <style>
+        .btn {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #grey { background-color: grey; }
+        #black { background-color: black; }
+        #blue { background-color: blue; }
+        #yellow { background-color: yellow; }
+        .reset {
+            font-size: 20px;
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: brown;">Color Scheme Switcher...</h1>
+    <div class="btn" id="grey"></div>
+    <div class="btn" id="black"></div>
+    <div class="btn" id="blue"></div>
+    <div class="btn" id="yellow"></div>
+    <input type="button" class="reset" id="reset" value="Reset">
+
+    <script>
+        const btns = document.querySelectorAll('.btn');
+        const body = document.querySelector('body');
+        const resetBtn = document.getElementById('reset');
+
+        btns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                body.style.backgroundColor = btn.id; // Set background color based on the button ID
+            });
+        });
+
+        resetBtn.addEventListener('click', function() {
+            body.style.backgroundColor = 'white'; // Reset the background color to white
+        });
+    </script>
+</body>
+</html>
